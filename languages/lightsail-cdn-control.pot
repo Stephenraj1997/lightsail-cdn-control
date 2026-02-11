@@ -1,0 +1,186 @@
+# Copyright (C) 2024 Stephen
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Lightsail CDN Control 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/lightsail-cdn-control\n"
+"POT-Creation-Date: 2024-02-11 12:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: admin/class-lightsail-cdn-admin.php
+msgid "Lightsail CDN Control"
+msgstr ""
+
+msgid "CDN Control"
+msgstr ""
+
+msgid "Manual Cache Clear"
+msgstr ""
+
+msgid "Clear all cached content on your Lightsail CDN distribution immediately."
+msgstr ""
+
+msgid "Clear CDN Cache Now"
+msgstr ""
+
+msgid "Auto-Clear Settings"
+msgstr ""
+
+msgid "Automatically clear CDN cache when content is updated."
+msgstr ""
+
+msgid "Enable Auto-Clear"
+msgstr ""
+
+msgid "When enabled, CDN cache will automatically clear when you publish or update selected content types."
+msgstr ""
+
+msgid "Post Types"
+msgstr ""
+
+msgid "Select All"
+msgstr ""
+
+msgid "Deselect All"
+msgstr ""
+
+msgid "Select which content types should trigger automatic cache clearing."
+msgstr ""
+
+msgid "Save Settings"
+msgstr ""
+
+msgid "Scheduled Auto-Clear"
+msgstr ""
+
+msgid "Set up automatic cache clearing on a recurring schedule."
+msgstr ""
+
+msgid "Next scheduled clear:"
+msgstr ""
+
+msgid "Calculating..."
+msgstr ""
+
+msgid "Enable Scheduled Clear"
+msgstr ""
+
+msgid "When enabled, CDN cache will be cleared automatically on a schedule."
+msgstr ""
+
+msgid "Frequency"
+msgstr ""
+
+msgid "Daily"
+msgstr ""
+
+msgid "Weekly"
+msgstr ""
+
+msgid "Monthly"
+msgstr ""
+
+msgid "How often to clear the cache."
+msgstr ""
+
+msgid "Day of Week"
+msgstr ""
+
+msgid "Sunday"
+msgstr ""
+
+msgid "Monday"
+msgstr ""
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+msgid "Friday"
+msgstr ""
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Day of Month"
+msgstr ""
+
+msgid "Select the day of the month (1-31). If a month has fewer days, the last day will be used."
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Time of day to run the cache clear (Timezone: %s)"
+msgstr ""
+
+msgid "Save Schedule"
+msgstr ""
+
+msgid "Configuration"
+msgstr ""
+
+msgid "Status:"
+msgstr ""
+
+msgid "Configured"
+msgstr ""
+
+msgid "Not Configured"
+msgstr ""
+
+msgid "Distribution:"
+msgstr ""
+
+msgid "Not configured"
+msgstr ""
+
+msgid "Region:"
+msgstr ""
+
+msgid "Add to wp-config.php:"
+msgstr ""
+
+msgid "Success!"
+msgstr ""
+
+msgid "CDN cache cleared successfully."
+msgstr ""
+
+msgid "Settings saved!"
+msgstr ""
+
+msgid "Error:"
+msgstr ""
+
+msgid "Security check failed"
+msgstr ""
+
+msgid "Unauthorized"
+msgstr ""
+
+msgid "CDN cache cleared automatically"
+msgstr ""
+
+msgid "CDN auto-clear failed:"
+msgstr ""
+
+#: includes/class-lightsail-cdn-aws.php
+msgid "Missing AWS credentials or distribution name. Please configure in wp-config.php"
+msgstr ""
+
+msgid "Lightsail CDN cache cleared successfully"
+msgstr ""
+
+msgid "AWS API Error (%d): %s"
+msgstr ""

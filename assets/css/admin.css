@@ -1,0 +1,252 @@
+/**
+ * Admin styles for Lightsail CDN Control
+ *
+ * @package Lightsail_CDN_Control
+ * @since 1.0
+ */
+
+/* Main wrapper */
+.lightsail-cdn-wrap {
+    margin: 20px 20px 20px 0;
+}
+
+/* Grid layout - Two equal columns */
+.lightsail-cdn-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1400px;
+    margin-top: 20px;
+}
+
+/* Columns */
+.lightsail-cdn-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Card styling */
+.lightsail-cdn-card {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.lightsail-cdn-card h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.lightsail-cdn-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.lightsail-cdn-card p {
+    margin: 0 0 15px 0;
+    color: #646970;
+}
+
+/* Toggle switch */
+.lightsail-toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.lightsail-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.lightsail-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.lightsail-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.lightsail-toggle input:checked + .lightsail-toggle-slider {
+    background-color: #2271b1;
+}
+
+.lightsail-toggle input:checked + .lightsail-toggle-slider:before {
+    transform: translateX(26px);
+}
+
+.lightsail-toggle input:focus + .lightsail-toggle-slider {
+    box-shadow: 0 0 1px #2271b1;
+}
+
+/* Next run info box */
+.lightsail-next-run-info {
+    background: #e7f5ff;
+    border-left: 4px solid #2271b1;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.lightsail-next-run-info strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #1d2327;
+}
+
+/* Countdown timer */
+.lightsail-countdown {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2271b1;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.lightsail-next-run-date {
+    font-size: 13px;
+    color: #666;
+    margin-top: 4px;
+}
+
+/* Configuration status badges */
+.lightsail-config-status p {
+    margin-bottom: 12px;
+}
+
+.lightsail-status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.lightsail-status-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.lightsail-status-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Code block */
+.lightsail-code-block {
+    background: #f5f5f5;
+    padding: 12px;
+    overflow-x: auto;
+    font-size: 11px;
+    line-height: 1.6;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin: 0;
+    font-family: Monaco, Consolas, "Courier New", monospace;
+}
+
+/* Form table adjustments */
+.lightsail-cdn-card .form-table {
+    margin-top: 0;
+}
+
+.lightsail-cdn-card .form-table th {
+    padding-left: 0;
+    width: 35%;
+}
+
+.lightsail-cdn-card .form-table td {
+    padding-right: 0;
+}
+
+/* Post types list */
+#post-types-list label {
+    display: block;
+    margin-bottom: 8px;
+    padding: 4px 0;
+}
+
+#post-types-list label:hover {
+    background: #f6f7f7;
+    padding-left: 4px;
+}
+
+#post-types-list input[type="checkbox"] {
+    margin-right: 6px;
+}
+
+/* Button spacing */
+.lightsail-cdn-card .button {
+    margin-right: 8px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 1280px) {
+    .lightsail-cdn-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 782px) {
+    .lightsail-cdn-wrap {
+        margin: 10px 10px 10px 0;
+    }
+    
+    .lightsail-cdn-card {
+        padding: 15px;
+    }
+    
+    .lightsail-countdown {
+        font-size: 20px;
+    }
+    
+    .lightsail-cdn-card .form-table th {
+        width: auto;
+    }
+}
+
+/* Description text */
+.description {
+    color: #646970;
+    font-size: 13px;
+}
+
+/* Select and input styling */
+.lightsail-cdn-card select,
+.lightsail-cdn-card input[type="time"] {
+    max-width: 100%;
+}
+
+/* Improve spacing for settings saved message */
+.wrap .notice {
+    margin: 15px 0;
+}

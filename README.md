@@ -1,186 +1,209 @@
-=== Lightsail CDN Control ===
-Contributors: stephen
-Tags: aws, lightsail, cdn, cache, cloudfront, performance, optimization
-Requires at least: 5.0
-Tested up to: 6.7
-Requires PHP: 7.2
-Stable tag: 1.0
-License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+# Lightsail CDN Control
 
-Comprehensive AWS Lightsail CDN cache management with manual clearing, automatic invalidation on content updates, and flexible scheduling.
+A comprehensive WordPress plugin for managing AWS Lightsail CDN cache with manual clearing, automatic invalidation, and flexible scheduling.
 
-== Description ==
+![WordPress Plugin Version](https://img.shields.io/badge/version-1.0-blue.svg)
+![WordPress](https://img.shields.io/badge/wordpress-5.0%2B-blue.svg)
+![PHP](https://img.shields.io/badge/php-7.2%2B-purple.svg)
+![License](https://img.shields.io/badge/license-GPLv2%2B-green.svg)
 
-Lightsail CDN Control is a powerful yet user-friendly plugin that gives you complete control over your AWS Lightsail CDN cache directly from your WordPress admin panel. Whether you need to clear your cache immediately, automatically invalidate it when content changes, or schedule regular cache clearing, this plugin has you covered.
+## Features
 
-= Key Features =
+### 🚀 Manual Cache Clearing
+- One-click cache invalidation from WordPress admin
+- Instant feedback on cache clearing status
+- Perfect for immediate control
 
-**Manual Cache Clearing**
-* One-click cache invalidation from WordPress admin
-* Instant feedback on cache clearing status
-* Perfect for when you need immediate control
+### ⚡ Automatic Cache Clearing
+- Auto-clear CDN cache when content is published or updated
+- Select which post types trigger cache clearing
+- Support for all custom post types
+- Immediate content updates across your CDN
 
-**Automatic Cache Clearing**
-* Automatically clear CDN cache when content is published or updated
-* Select which post types trigger cache clearing
-* Support for custom post types
-* Immediate content updates across your CDN
+### 🕒 Scheduled Cache Clearing
+- Daily, weekly, or monthly clearing options
+- Choose specific times and days/dates
+- Live countdown timer showing next scheduled clear
+- Uses your WordPress timezone settings
 
-**Scheduled Cache Clearing**
-* Set up recurring cache clears on your schedule
-* Daily, weekly, or monthly options
-* Choose specific times and days
-* Live countdown timer showing next scheduled clear
-* Uses your WordPress timezone settings
+### ⚙️ Easy Configuration
+- Simple wp-config.php based credentials
+- Clear status indicators
+- Secure AWS Signature Version 4 authentication
 
-**Easy Configuration**
-* Simple wp-config.php based credentials
-* Clear status indicators
-* Helpful configuration examples
-* Secure AWS Signature Version 4 authentication
+## Installation
 
-= Perfect For =
-
-* WordPress sites using AWS Lightsail CDN
-* Content publishers who need fresh content delivered fast
-* Developers who want automated cache management
-* Sites with frequent content updates
-* Anyone wanting more control over their CDN
-
-= Requirements =
-
-* AWS Lightsail distribution with CDN enabled
-* AWS Access Key ID and Secret Access Key with Lightsail permissions
-* WordPress 5.0 or higher
-* PHP 7.2 or higher
-
-= Documentation =
-
-Full setup instructions and documentation included. Easy 5-minute setup with wp-config.php constants.
-
-== Installation ==
-
-= From WordPress Admin =
-
-1. Go to Plugins > Add New
-2. Search for "Lightsail CDN Control"
-3. Click "Install Now" and then "Activate"
-4. Configure your AWS credentials in wp-config.php
-5. Go to Settings > CDN Control to manage your cache
-
-= Manual Installation =
+### Via WordPress Admin
 
 1. Download the plugin ZIP file
-2. Upload to /wp-content/plugins/ directory
-3. Extract the ZIP file
-4. Activate the plugin through WordPress admin
-5. Configure AWS credentials (see Configuration section)
+2. Go to **Plugins > Add New > Upload Plugin**
+3. Choose the ZIP file and click **Install Now**
+4. Activate the plugin
+5. Configure AWS credentials (see Configuration below)
 
-= Configuration =
+### Manual Installation
 
-Add these constants to your wp-config.php file:
+1. Download and extract the plugin
+2. Upload the `lightsail-cdn-control` folder to `/wp-content/plugins/`
+3. Activate through the WordPress admin
+4. Configure AWS credentials
 
-`define('AWS_ACCESS_KEY_ID', 'your_access_key_here');
+## Configuration
+
+Add these constants to your `wp-config.php` file:
+
+```php
+define('AWS_ACCESS_KEY_ID', 'your_access_key_here');
 define('AWS_SECRET_ACCESS_KEY', 'your_secret_key_here');
 define('AWS_DEFAULT_REGION', 'us-east-1');
-define('LIGHTSAIL_DISTRIBUTION_NAME', 'your_distribution_name');`
+define('LIGHTSAIL_DISTRIBUTION_NAME', 'your_distribution_name');
+```
 
-**Finding Your Distribution Name:**
-1. Log in to AWS Lightsail console
-2. Go to Networking > CDN distributions
+### Finding Your Distribution Name
+
+1. Log in to [AWS Lightsail console](https://lightsail.aws.amazon.com/)
+2. Navigate to **Networking > CDN distributions**
 3. Find your distribution and copy its name
 
-**Creating AWS Credentials:**
-1. Go to AWS IAM console
-2. Create a new user or use existing one
-3. Attach Lightsail permissions
+### Creating AWS Credentials
+
+1. Go to [AWS IAM console](https://console.aws.amazon.com/iam/)
+2. Create a new user or use an existing one
+3. Attach Lightsail permissions policy
 4. Generate access keys
 5. Add keys to wp-config.php
 
-== Frequently Asked Questions ==
+## Usage
 
-= What is AWS Lightsail CDN? =
+### Manual Cache Clearing
 
-AWS Lightsail CDN is a content delivery network service from Amazon Web Services that caches your website content at edge locations worldwide, making your site faster for visitors globally.
+1. Go to **Settings > CDN Control** in WordPress admin
+2. Click **Clear CDN Cache Now** button
+3. Confirm the action
+4. Wait for success notification
 
-= Do I need an AWS account? =
+### Auto-Clear Setup
 
-Yes, you need an AWS account with an active Lightsail distribution and appropriate permissions.
+1. Go to **Settings > CDN Control**
+2. Enable **Auto-Clear** toggle
+3. Select which post types should trigger cache clearing
+4. Save settings
+5. Cache will now clear automatically when selected content is updated
 
-= How do I get my AWS credentials? =
+### Scheduled Clearing
 
-You can create AWS credentials (Access Key ID and Secret Access Key) from the AWS IAM console. Make sure the credentials have permissions to manage Lightsail distributions.
+1. Go to **Settings > CDN Control**
+2. Enable **Scheduled Auto-Clear** toggle
+3. Choose frequency (Daily, Weekly, or Monthly)
+4. Set time of day
+5. For weekly: choose day of week
+6. For monthly: choose day of month (1-31)
+7. Save settings
+8. View live countdown to next clear
 
-= Is this plugin secure? =
+## Requirements
 
-Yes, the plugin uses AWS Signature Version 4 for secure authentication. Your credentials are stored in wp-config.php (not in the database) and are never exposed in the admin interface.
+- WordPress 5.0 or higher
+- PHP 7.2 or higher
+- AWS Lightsail distribution with CDN enabled
+- AWS Access Key with Lightsail permissions
 
-= Does this work with CloudFront? =
+## File Structure
 
-This plugin is specifically designed for AWS Lightsail CDN. For CloudFront, you would need a different plugin.
+```
+lightsail-cdn-control/
+├── admin/
+│   └── class-lightsail-cdn-admin.php       # Admin interface
+├── assets/
+│   ├── css/
+│   │   └── admin.css                        # Admin styles
+│   └── js/
+│       └── admin.js                         # Admin JavaScript
+├── includes/
+│   ├── class-lightsail-cdn-core.php        # Core plugin class
+│   ├── class-lightsail-cdn-aws.php         # AWS API handler
+│   └── class-lightsail-cdn-scheduler.php   # Scheduling logic
+├── languages/                               # Translation files (future)
+├── lightsail-cdn-control.php               # Main plugin file
+├── uninstall.php                            # Uninstall cleanup
+├── readme.txt                               # WordPress.org readme
+└── README.md                                # This file
+```
 
-= Can I schedule cache clears at specific times? =
+## Security
 
-Yes! The plugin supports daily, weekly, and monthly scheduling with customizable times. You can choose the exact time and day/date for cache clearing.
+- Credentials stored securely in wp-config.php (not in database)
+- Uses AWS Signature Version 4 for authentication
+- Nonce verification for all admin actions
+- Capability checks for all operations
+- No user data collection or transmission
 
-= What happens if cache clearing fails? =
+## Troubleshooting
 
-The plugin will display an error message with details about what went wrong. Common issues include incorrect credentials or distribution name.
+### Cache Not Clearing
 
-= Will this slow down my site? =
+1. Verify AWS credentials are correct in wp-config.php
+2. Check distribution name matches exactly
+3. Ensure IAM user has Lightsail permissions
+4. Check error messages in WordPress admin
 
-No, cache clearing operations happen in the background and don't affect your site's performance. The plugin only communicates with AWS when you manually clear cache, when content is updated (if auto-clear is enabled), or during scheduled clears.
+### Scheduled Clear Not Running
 
-= Can I clear cache for specific pages only? =
+1. Verify WordPress cron is working
+2. Check timezone settings in WordPress
+3. Confirm scheduled clear is enabled
+4. Look for errors in debug.log
 
-Currently, the plugin clears the entire CDN cache. Selective cache clearing may be added in future versions.
+### Auto-Clear Not Working
 
-= Does this work with multisite? =
+1. Ensure auto-clear is enabled
+2. Verify post types are selected
+3. Check that post status is "published"
+4. Confirm AWS credentials are valid
 
-The plugin is compatible with WordPress multisite installations. Each site can have its own cache clearing schedule.
+## Changelog
 
-== Screenshots ==
+### Version 1.0 (Initial Release)
+- Manual cache clearing functionality
+- Automatic cache clearing on content updates
+- Scheduled cache clearing (daily, weekly, monthly)
+- Live countdown timer for scheduled clears
+- Support for custom post types
+- Local timezone support
+- Comprehensive error reporting
+- Modern, responsive admin interface
 
-1. Main admin interface with manual cache clearing
-2. Auto-clear settings for automatic cache invalidation
-3. Scheduled cache clearing with live countdown timer
-4. Configuration panel showing AWS status
-5. Post type selection for auto-clear functionality
+## Contributing
 
-== Changelog ==
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-= 1.0 =
-* Initial release
-* Manual cache clearing functionality
-* Automatic cache clearing on content updates
-* Scheduled cache clearing (daily, weekly, monthly)
-* Live countdown timer for scheduled clears
-* Support for custom post types
-* Local timezone support for scheduled clears
-* Comprehensive AWS error reporting
-* Clean, modern admin interface
-* Full WordPress coding standards compliance
+## Support
 
-== Upgrade Notice ==
+- WordPress Support Forum: [Plugin Support](https://wordpress.org/support/plugin/lightsail-cdn-control/)
+- GitHub Issues: [Report Issues](https://github.com/yourusername/lightsail-cdn-control/issues)
 
-= 1.0 =
-Initial release of Lightsail CDN Control.
-
-== Support ==
-
-For support, feature requests, or bug reports, please visit:
-* Plugin support forum: https://wordpress.org/support/plugin/lightsail-cdn-control/
-* GitHub repository: https://github.com/yourusername/lightsail-cdn-control
-
-== Privacy Policy ==
-
-This plugin does not collect, store, or transmit any user data. All AWS credentials are stored locally in your wp-config.php file and are only used to communicate with AWS Lightsail API for cache management operations.
-
-== Credits ==
-
-Developed by Stephen with ❤️ for the WordPress community.
-
-== License ==
+## License
 
 This plugin is licensed under the GPLv2 or later.
+
+```
+Copyright (C) 2024 Stephen
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+```
+
+## Author
+
+**Stephen**
+
+---
+
+Made with ❤️ for the WordPress community
