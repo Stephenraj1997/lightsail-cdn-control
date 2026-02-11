@@ -187,7 +187,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 This plugin is licensed under the GPLv2 or later.
 
 ```
-Copyright (C) 2024 Stephen
+Copyright (C) 2026 Stephen
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -202,7 +202,7 @@ GNU General Public License for more details.
 
 ## Author
 
-**Stephen**
+**Stephen Raj**
 
 ---
 
